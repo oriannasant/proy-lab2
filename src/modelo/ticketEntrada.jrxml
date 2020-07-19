@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticketEntrada" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1341919a-dc7d-4f15-9710-d77576d97b02">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from detalleventa order by codigo DESC Limit 1]]>
+	</queryString>
+	<field name="codigo" class="java.lang.Integer"/>
+	<field name="idventa" class="java.lang.Integer"/>
+	<field name="idproducto" class="java.lang.Integer"/>
+	<field name="cantidad" class="java.lang.Integer"/>
+	<field name="precio" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="44" y="32" width="193" height="36" uuid="091aecb2-6cc3-4754-ae8b-42a7fc7fe840"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ticket Entrada]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="285" y="48" width="100" height="20" uuid="c59a5834-5622-484e-afa9-f3e2da450d4d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="8" y="11" width="229" height="68" uuid="366dbec9-9940-48b2-be86-fc69ab4fce40"/>
+				<box>
+					<pen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+					<topPen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+					<leftPen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+					<rightPen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+				</box>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="15" width="44" height="20" uuid="ae4272c8-1827-4c5a-8147-deb163141317"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="59" y="15" width="100" height="20" uuid="98d43725-80e7-48d0-b976-cc99142aa875"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="4" width="65" height="20" uuid="e15e0dba-08be-4de3-8be6-2d3856563133"/>
+				<text><![CDATA[Id Venta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="8" y="57" width="100" height="20" uuid="82825f8b-f49b-4ad9-8aec-264874ac4fe7"/>
+				<textFieldExpression><![CDATA[$F{idproducto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="37" width="100" height="20" uuid="e3e43e2e-0c12-4c6b-ad92-06cccc85fade"/>
+				<text><![CDATA[Id Producto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="108" y="57" width="100" height="20" uuid="f26b5c82-e214-431b-b6fa-12099b5bf921"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="108" y="37" width="100" height="20" uuid="fbcc02b7-d504-4ea4-93c0-b8e8bc915881"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="208" y="57" width="100" height="20" uuid="6aacbd90-c46b-428f-84cb-0c51edf97ebf"/>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="208" y="37" width="100" height="20" uuid="655a88e4-eff5-404e-9cdb-ae0c9a4167d0"/>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="57" width="100" height="1" uuid="d1b09c60-c580-4077-924b-ecc0ef355524"/>
+			</break>
+			<textField>
+				<reportElement x="73" y="4" width="100" height="20" uuid="06d42cf0-f6b5-4517-b6c2-5b21dc0f5c41"/>
+				<textFieldExpression><![CDATA[$F{idventa}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="-36" width="385" height="148" uuid="10a1a1ad-99c8-4001-9d37-ab8c48dbd59c"/>
+				<box>
+					<pen lineWidth="8.25" lineStyle="Solid" lineColor="#00CCCC"/>
+					<topPen lineWidth="8.25" lineStyle="Solid" lineColor="#00CCCC"/>
+					<leftPen lineWidth="8.25" lineStyle="Solid" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="8.25" lineStyle="Solid" lineColor="#00CCCC"/>
+					<rightPen lineWidth="8.25" lineStyle="Solid" lineColor="#00CCCC"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticketGolosina" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95d60873-fb55-49db-bb31-73a600a49615">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from venta order by codigoventa DESC Limit 1]]>
+	</queryString>
+	<field name="codigoventa" class="java.lang.Integer"/>
+	<field name="idcliente" class="java.lang.Integer"/>
+	<field name="idvendedor" class="java.lang.Integer"/>
+	<field name="monto" class="java.math.BigDecimal"/>
+	<field name="fechaventa" class="java.sql.Date"/>
+	<field name="estatus" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="21" width="202" height="38" uuid="81615bc3-05ce-4919-9467-b8cb3f59271f"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ticket Golosina]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="430" y="39" width="100" height="20" uuid="3e2cfd59-5d58-4b07-b69e-1af6f937fae7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="11" width="229" height="68" uuid="0143d162-7bf5-4c1f-895f-49378d1d7e3d"/>
+				<box>
+					<pen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+					<topPen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+					<leftPen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+					<rightPen lineWidth="17.25" lineStyle="Dashed" lineColor="#00CCCC"/>
+				</box>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="22" width="100" height="20" uuid="cc974dc8-1840-46c1-be7c-a9e6f41e9850"/>
+				<text><![CDATA[Codigo Factura]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="117" y="22" width="100" height="20" uuid="df280998-2eb5-4a3b-bafb-fd9a0050fdff"/>
+				<textFieldExpression><![CDATA[$F{codigoventa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="22" width="100" height="20" uuid="b5a77f24-c843-47fb-b072-4f63bd8dc1cd"/>
+				<text><![CDATA[Fecha venta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="22" width="100" height="20" uuid="adf6b0ec-3f3c-443e-b6dd-82ba4bad3832"/>
+				<textFieldExpression><![CDATA[$F{fechaventa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="157" splitType="Stretch">
+			<textField>
+				<reportElement x="117" y="17" width="100" height="20" uuid="3c7e5715-fb6b-4a25-8f2f-e0992b1c44da"/>
+				<textFieldExpression><![CDATA[$F{idcliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="17" width="100" height="20" uuid="3a3fa33c-022e-45b0-aaf2-bb05f33de8c0"/>
+				<text><![CDATA[Codigo Cliente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="17" width="100" height="20" uuid="fe928f72-79af-42f7-a092-42759e58e6fe"/>
+				<textFieldExpression><![CDATA[$F{idvendedor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="17" width="100" height="20" uuid="bf9b054a-8a49-4c74-ae36-98139d3bf280"/>
+				<text><![CDATA[Codigo Vendedor]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="92" width="100" height="20" uuid="e762b393-5d1e-4d3a-b259-e8d3b19fcc31"/>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="217" y="92" width="100" height="20" uuid="e802a077-ab4a-47d0-8b1b-1ee3c89d10e8"/>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="-77" width="440" height="223" uuid="2e94ed1d-2e54-4781-8826-329b37971709"/>
+				<box>
+					<pen lineWidth="11.75" lineStyle="Solid" lineColor="#00CCCC"/>
+					<topPen lineWidth="11.75" lineStyle="Solid" lineColor="#00CCCC"/>
+					<leftPen lineWidth="11.75" lineStyle="Solid" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="11.75" lineStyle="Solid" lineColor="#00CCCC"/>
+					<rightPen lineWidth="11.75" lineStyle="Solid" lineColor="#00CCCC"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

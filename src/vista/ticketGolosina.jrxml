@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticketGolosina" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e7dca39-6f89-4d01-9b8b-af0ea0dc7b9e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select * from venta ORDER BY codigoventa DESC LIMIT 1]]>
+	</queryString>
+	<field name="codigoventa" class="java.lang.Integer"/>
+	<field name="idcliente" class="java.lang.Integer"/>
+	<field name="idvendedor" class="java.lang.Integer"/>
+	<field name="monto" class="java.math.BigDecimal"/>
+	<field name="fechaventa" class="java.lang.String"/>
+	<field name="formapago" class="java.lang.String"/>
+	<field name="estatus" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="29" width="218" height="35" uuid="a64fd4d6-d6e6-4b72-89b1-722b93e3c21a"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ticket Golosina]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="40" y="15" width="236" height="62" uuid="c53f48ea-beb8-4d34-b6aa-db466bd65c0a"/>
+				<box>
+					<pen lineWidth="9.5" lineStyle="Dashed" lineColor="#00FFFF"/>
+					<topPen lineWidth="9.5" lineStyle="Dashed" lineColor="#00FFFF"/>
+					<leftPen lineWidth="9.5" lineStyle="Dashed" lineColor="#00FFFF"/>
+					<bottomPen lineWidth="9.5" lineStyle="Dashed" lineColor="#00FFFF"/>
+					<rightPen lineWidth="9.5" lineStyle="Dashed" lineColor="#00FFFF"/>
+				</box>
+			</frame>
+			<staticText>
+				<reportElement x="322" y="44" width="100" height="20" uuid="b7b06818-4730-42f7-8e9e-dcdf4bf38151"/>
+				<text><![CDATA[fechaventa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="422" y="44" width="100" height="20" uuid="e1fa9921-0b16-49af-9219-c105b2b38f13"/>
+				<textFieldExpression><![CDATA[$F{fechaventa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="15" width="100" height="20" uuid="a9722807-adcc-4d16-9962-c2ce2fead1de"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo Venta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="125" y="16" width="100" height="20" uuid="e668f72b-71c9-41b5-bf10-d3a3b4e87c7c"/>
+				<textFieldExpression><![CDATA[$F{codigoventa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="12" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="22" width="100" height="20" uuid="72a8ac9b-1a85-4ce5-8d4d-d1cd3d57809c"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id Cliente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="125" y="22" width="100" height="20" uuid="99f733bf-09ba-49d3-a687-fa23bdd11b1b"/>
+				<textFieldExpression><![CDATA[$F{idcliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="268" y="22" width="100" height="20" uuid="b5adb36c-e9e0-4287-ba6a-22d618b07535"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id Vendedor]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="22" width="100" height="20" uuid="43b07d18-8596-4531-9793-cb35e9bd9032"/>
+				<textFieldExpression><![CDATA[$F{idvendedor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="294" y="68" width="100" height="20" uuid="be0d9e5d-863e-4d43-a730-9f6b0f42ea8e"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="68" width="100" height="20" uuid="3e481948-b5ad-4670-b368-12b1a95e0271"/>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="276" y="105" width="118" height="20" uuid="a4861592-cf79-4b6d-9b28-8056fc69a33e"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Forma de Pago]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="105" width="100" height="20" uuid="0244d9fe-1fc9-4610-bced-a5f7594b3e8d"/>
+				<textFieldExpression><![CDATA[$F{formapago}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="-69" width="555" height="207" uuid="c690a7a1-b659-4a77-8d0b-6ac94f99943b"/>
+				<box>
+					<pen lineWidth="5.25" lineColor="#00FFFF"/>
+					<topPen lineWidth="5.25" lineColor="#00FFFF"/>
+					<leftPen lineWidth="5.25" lineColor="#00FFFF"/>
+					<bottomPen lineWidth="5.25" lineColor="#00FFFF"/>
+					<rightPen lineWidth="5.25" lineColor="#00FFFF"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
