@@ -41,7 +41,7 @@ public class ListadoEmpleado extends javax.swing.JFrame {
         rSTextFieldIconUno2 = new RSMaterialComponent.RSTextFieldIconUno();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        rSLabelFecha1 = new rojeru_san.rsdate.RSLabelFecha();
+        lblfecha = new rojeru_san.rsdate.RSLabelFecha();
         rSLabelHora1 = new rojeru_san.rsdate.RSLabelHora();
         fechaInicio = new com.toedter.calendar.JDateChooser();
         fechaFin = new com.toedter.calendar.JDateChooser();
@@ -90,8 +90,8 @@ public class ListadoEmpleado extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(15, 158, 168));
         jLabel3.setText("Fecha Fin:");
 
-        rSLabelFecha1.setForeground(new java.awt.Color(15, 158, 168));
-        rSLabelFecha1.setFont(new java.awt.Font("Roboto Bold", 1, 12)); // NOI18N
+        lblfecha.setForeground(new java.awt.Color(15, 158, 168));
+        lblfecha.setFont(new java.awt.Font("Roboto Bold", 1, 12)); // NOI18N
 
         rSLabelHora1.setForeground(new java.awt.Color(15, 158, 168));
         rSLabelHora1.setFont(new java.awt.Font("Roboto Bold", 1, 12)); // NOI18N
@@ -116,7 +116,7 @@ public class ListadoEmpleado extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(rSLabelFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -152,7 +152,7 @@ public class ListadoEmpleado extends javax.swing.JFrame {
                         .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSLabelFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(8, 8, 8)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +232,7 @@ public class ListadoEmpleado extends javax.swing.JFrame {
     public RSMaterialComponent.RSButtonIconUno btnAtras;
     public rojeru_san.rsbutton.RSButtonForma btnCerrarSesion;
     private com.toedter.calendar.JDateChooser fechaFin;
-    private com.toedter.calendar.JDateChooser fechaInicio;
+    public static com.toedter.calendar.JDateChooser fechaInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -240,8 +240,8 @@ public class ListadoEmpleado extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JTable jTaReporte;
+    public static rojeru_san.rsdate.RSLabelFecha lblfecha;
     private RSMaterialComponent.RSButtonIconUno rSButtonIconUno1;
-    private rojeru_san.rsdate.RSLabelFecha rSLabelFecha1;
     private rojeru_san.rsdate.RSLabelHora rSLabelHora1;
     private rojeru_san.rspanel.RSPanelGradiente rSPanelGradiente1;
     private RSMaterialComponent.RSTextFieldIconUno rSTextFieldIconUno2;

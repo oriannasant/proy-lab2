@@ -448,7 +448,7 @@ public void addEvents(java.awt.event.ActionListener evt){
     private rojeru_san.rsdate.RSLabelHora rSLabelHora1;
     private rojeru_san.rspanel.RSPanelGradiente rSPanelGradiente1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
-    public rojeru_san.rsfield.RSTextFullBD txtCodigo;
+    public static rojeru_san.rsfield.RSTextFullBD txtCodigo;
     public rojeru_san.rsfield.RSPassViewBD txtConfirme;
     public rojeru_san.rsfield.RSPassViewBD txtContrasenna;
     public rojeru_san.rsfield.RSTextFullBD txtUsuario;

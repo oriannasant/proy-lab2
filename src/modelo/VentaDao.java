@@ -10,10 +10,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import vista.ListadoMontoCliente;
 import vista.ListadoEmpleado;
+import java.util.Date;  
 
 /**
  *
@@ -25,7 +27,7 @@ public class VentaDao {
     PreparedStatement ps;
     ResultSet rs;
     int r=0;
-    
+   Date d=new Date(); 
     //este metodo no se bien que hace
     public String idVenta(){
         String idv ="";
@@ -85,55 +87,7 @@ public int guardarDetalleVenta(DetalleVenta dven){
         }
         return r;
     }
-    
-  /* public List listar(){
-       List<Venta>datos= new ArrayList<>();
-       String sql="Select * From venta";
-       
-       try {
-           con= conx.getConnection();
-           ps=con.prepareStatement(sql);
-            rs= ps.executeQuery();
-            while (rs.next()) {               
-               Venta v= new Venta();
-               v.setIdvendedor(rs.getInt(1));
-               v.setIdcliente(rs.getInt(2));
-               v.setCodigoventa(rs.getInt(3));
-               v.setMonto(rs.getFloat(4));
-               datos.add(v);
-           }
-           
-       } catch (Exception e) {
-       }
  
-      
-       return datos;
-   
-      }
-   public List listar2(){
-       List<Venta>datos= new ArrayList<>();
-       String sql="Select * From venta";
-       
-       try {
-           con= conx.getConnection();
-           ps=con.prepareStatement(sql);
-            rs= ps.executeQuery();
-            while (rs.next()) {               
-               Venta v= new Venta();
-               v.setIdcliente(rs.getInt(1));
-                v.setIdvendedor(rs.getInt(2));
-               v.setCodigoventa(rs.getInt(3));
-               v.setMonto(rs.getFloat(4));
-               datos.add(v);
-           }
-           
-       } catch (Exception e) {
-       }
- 
-      
-       return datos;
-   
-      }*/
      public void cargar() {
 
         try {
@@ -238,7 +192,13 @@ public int guardarDetalleVenta(DetalleVenta dven){
         }
 
     }
-    
+   /* public void porfechas(){
+        
+        //en la documentacion dice que no usemos el date time  por viejo
+    String fechainicio = new SimpleDateFormat("yyyy/MM").format(d.getDate());
+    String confe= ListadoEmpleado.lblfecha.getFecha();
+    }
+    */
     }
     
 

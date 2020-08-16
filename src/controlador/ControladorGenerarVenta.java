@@ -17,7 +17,6 @@ import javax.swing.SpinnerNumberModel;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
 import modelo.Cliente;
-import modelo.Conexion;
 import modelo.DetalleVenta;
 import modelo.Empleado;
 import modelo.FormaPagoM;
@@ -27,12 +26,7 @@ import modelo.Sucursal;
 import modelo.Usuario;
 import modelo.Venta;
 import modelo.VentaDao;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.view.JasperViewer;
+
 
 import vista.GenerarVenta;
 
@@ -102,10 +96,7 @@ public class ControladorGenerarVenta implements ActionListener {
                 }
             } 
         }
-        /*  if(ae.getSource()== vgn.btnVerP)
-         {
-         // muestraprod();
-         }*/
+       
         if (ae.getSource() == vgn.btnAgregar) {
 
             if (!vgn.txtPrecio.getText().equals("")) {

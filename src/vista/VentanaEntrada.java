@@ -135,6 +135,7 @@ public class VentanaEntrada extends javax.swing.JFrame {
 
         rSButtonIconUno1.setBackground(new java.awt.Color(131, 202, 205));
         rSButtonIconUno1.setBackgroundHover(new java.awt.Color(131, 202, 205));
+        rSButtonIconUno1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

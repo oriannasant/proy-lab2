@@ -50,17 +50,8 @@ public class ControladorRegistroUser implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
            if(ae.getSource()== vista.btnGuardar)
         {   guardar();  
-                     // if( vista.txtCodigo.getText().equals(emp.getId())){
-           /* int cod = Integer.parseInt(vista.txtCodigo.getText());
-            if ( cod ==emp.getId()){
-                          guardar();  
-                         
-                          JOptionPane.showMessageDialog(null, "REGISTRO GUARDADO");
-                      }else{
-                      
-                      JOptionPane.showMessageDialog(null, "ERROR EL CODIGO DEL EMPLEADO NO EXISTE");
-                  
-                      }*/
+            limpiar();
+                     
                
         }
         if(ae.getSource()== vista.btnCerrar)
@@ -82,37 +73,51 @@ public class ControladorRegistroUser implements ActionListener{
       
    
     } 
+    
+   
      public void guardar(){
 
         String pass = new String(vista.txtContrasenna.getPassword());
         String passcon = new String(vista.txtConfirme.getPassword());
-        
+        emp.setId(0);
         if(pass.equals(passcon))
         {
             String usuario = vista.txtUsuario.getText();
-            int codigo = Integer.parseInt(vista.txtCodigo.getText());
+            //int codigo = Integer.parseInt(vista.txtCodigo.getText());
             int item = vista.cboTipoRol.getSelectedIndex();
-           /* mod.setUsuario(vista.txtUsuario.getText());
-            mod.setContrasenna(pass);
-            int codigo = Integer.parseInt(vista.txtCodigo.getText());
-            mod.setCodigoEmpleado(codigo);
-            //int itemsur = vista.cboIDSucursal.getSelectedIndex();
-            int item = vista.cboTipoRol.getSelectedIndex();
-            mod.setId_tipoRol(item);
-            //mod.setId(itemsur);
-            */
+            int cdg = Integer.parseInt(vista.txtCodigo.getText());
+           // Usuario users = 
+           dao.buscar(cdg,emp);
             
-            String resp = dao.registrar(usuario, pass, codigo, item);
-            if (resp != null) {
-
-                JOptionPane.showMessageDialog(null, "Registro Guardado");
-            } 
+            int codigo = emp.getId();
+           // if(emp.getId() != 0){
+           
+            if ( cdg ==emp.getId()){
+                           String resp = dao.registrar(usuario, pass, codigo, item);
+                         
+                      }else{
             
-        
+                             JOptionPane.showMessageDialog(null, "Empleado no existe");
+            
+                             }  
         }else
         {
             JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
-        }}
+        }
+                      
+           /* String resp = dao.registrar(usuario, pass, codigo, item);
+             if (resp != null) {
+
+                JOptionPane.showMessageDialog(null, "Registro Guardado");
+            } */
+           // }else{
+            
+            //JOptionPane.showMessageDialog(null, "Empleado no existe");
+            
+            //}
+        
+          
+}
      public void limpiar()
 {
     vista.txtUsuario.setText("");
